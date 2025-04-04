@@ -304,7 +304,7 @@ textreport frame "" {
     formats html
     title "Initial Plan"
     center '<[report id="initialPlan"]>'
-  }
+  } 
 }
 
 # A traditional Gantt chart with a project overview.
@@ -402,6 +402,16 @@ resourcereport resourceGraph "" {
   columns no, name, effort, rate, weekly { ${TaskTip} }
   loadunit shortauto
   # We only like to show leaf tasks for leaf resources.
+  hidetask ~(isleaf() & isleaf_())
+  sorttasks plan.start.up
+}
+
+taskreport initialPlan "" {
+  scenarios plan
+  headline "Initial Project Plan"
+  columns no, name, effort, rate, weekly { ${TaskTip} }
+  loadunit shortauto
+  # Only show leaf tasks for leaf resources
   hidetask ~(isleaf() & isleaf_())
   sorttasks plan.start.up
 }
