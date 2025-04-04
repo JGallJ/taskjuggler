@@ -70,7 +70,8 @@ resource dev3 "Peter Green" {
 }
 resource dev4 "Jorge Gallardo" {
   email "868801@unizar.es"
-  rate 4
+  rate 100
+  limits dailymax 4h
 }
 
 # Now we specify the work packages. The whole project is described as
@@ -192,7 +193,7 @@ task WMGame "Web & Mobile Game" {
   }
 
   task ttest "Acceptance tests" {
-      date start "2025-05-15"
+      start 2025-05-15
       effort 10d
       allocate boss
       allocate dev2
