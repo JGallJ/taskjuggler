@@ -192,7 +192,7 @@ task WMGame "Web & Mobile Game" {
   }
 
   task ttest "Acceptance tests" {
-      start "2025-05-15"
+      date start "2025-05-15"
       effort 10d
       allocate boss
       allocate dev2
@@ -296,6 +296,11 @@ textreport frame "" {
     formats html
     title "Resource Graph"
     center '<[report id="resourceGraph"]>'
+  }
+  textreport "InitialPlan" {
+    formats html
+    title "Initial Plan"
+    center '<[report id="initialPlan"]>'
   }
 }
 
